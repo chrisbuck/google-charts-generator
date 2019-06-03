@@ -5,6 +5,8 @@
 
 The Google Charts Generator is a suite of javascript files and stylesheets allowing a user to draw Google Charts using only HTML.
 
+For a preview of the latest development snapshot, [visit the app's page on Plunker](http://plnkr.co/YcJgytD30Ym3DjoXXvEx "Plunker - Google Charts Generator").
+
 > Example 1:  
 
     <div id="tableChart" class="gChart mainTable chartVisible" data-charttype="table">
