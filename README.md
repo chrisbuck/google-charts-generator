@@ -89,3 +89,31 @@ Whether you are using calculated columns in a table visualization, a pie visuali
   * data-calcdispose: Available values (preserve or replace) specify whether to keep the source columns in the data table or not. You can always hide the source columns, so there's really not much reason to select replace, but you might need to. Default: "preserve".
   * data-calctype: Specifies whether the calculated column function will be performing mathematics (e.g., data-calctype="number") or text replacements (e.g., data-calctype="string").
 2. If you are creating a column that inserts texts from the values in other columns, simply use enclosing brackets ("{" and "}") to specify the source columns. The text within the brackets must match the id (not the label) of another data column.
+
+## The Dashboard
+
+> Example 3:
+
+    <div id="dashboard" class="gDashboard">
+          <div id="control_div"></div>
+          <div class="dashControls">
+              <div id="filterProject" data-label="Project" data-type="string" data-controltype="category"></div>
+              <div id="filterGroup" data-label="Group" data-type="string" data-controltype="category"></div>
+              <div id="filterAgency" data-label="Agency" data-type="string" data-controltype="category"></div>
+          </div>
+    </div>
+
+There can only be one dashboard per page, so to create a dashboard, simply create a div with an id of "dashboard" and a class of "gDashboard". (The need to include a class at all will eventually be phased out).
+
+Within the dashboard, create a div (class: "dashControls").
+
+Within .dashControls, create divs for your controls, including the following parameters:
+
+1. id: Arbitrary
+2. data-label: Must match the id (not the label) of a data column specified in a chart.
+3. data-type: The type of data being filtered against (e.g., for the "name" column, this value would be "string").
+4. data-controltype: Can be one of several values:
+  * category: a dropdown selecting text
+  * number: a slider allowing the selection of values within a range
+  * string: a text input akin to a search box
+  * date: a slider allowing the selection of dates within a range
