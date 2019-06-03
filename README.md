@@ -73,5 +73,19 @@ Within each column div, specify the following parameters:
 * data-key: This is the key used to retrieve the data. It has to match the JSON data exactly, and you need to know it in advance.
   * Example: In sample-data.js, the identifier (or key) for the employee's name is "name". Note the lower case (case matters).
 * width: Specify the width of the table column in pixels. Note: width will not affect the display for other chart types (like pie, bar, etc.), so it only needs to be included in table charts.
+* visibility: If visibility="hidden", you hide the entire column.
 
+## Creating Calculated Columns
 
+> Example 2:
+
+    <div id="Person Link" data-type="calc" data-calcdispose="preserve" data-calctype="string" data-label="Person Link" width="110px">
+        <a class="calcLink" href="{Index}">{Name}</a>
+    </div>
+
+Whether you are using calculated columns in a table visualization, a pie visualization, or any other type, the approach is the same:
+
+1. Create a data column div with some additional parameters:
+  * data-calcdispose: Available values (preserve or replace) specify whether to keep the source columns in the data table or not. You can always hide the source columns, so there's really not much reason to select replace, but you might need to. Default: "preserve".
+  * data-calctype: Specifies whether the calculated column function will be performing mathematics (e.g., data-calctype="number") or text replacements (e.g., data-calctype="string").
+2. If you are creating a column that inserts texts from the values in other columns, simply use enclosing brackets ("{" and "}") to specify the source columns. The text within the brackets must match the id (not the label) of another data column.
