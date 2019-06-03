@@ -51,11 +51,27 @@ And in the footer (or below the html defining how to draw the charts), reference
 ### Steps:
 1. Create a div element with an arbitrary id.
 2. Assign the div the following classes: "gChart mainTable chartVisible".
-3. Include a div inside the mainTable with class of "dataColumns."
-4. For each column you want in your table, add a div with the following attributes:
+3. Assign the div a data tag to specify the chart type (currently either "table" or "pie"). For example, a the main table is constructed with "data-charttype="table".
+4. Include a div inside the mainTable with class of "dataColumns."
+5. For each column you want in your table, add a div with the following attributes:
     * id,
     * data-type: (number, string, or calc),
     * data-label,
     * data-key,
     * width
+
+## Creating Data Columns
+*See Example 1, above*
+
+All data columns, regardless of chart type, need to be placed in a div (class: "dataColumns" within the parent div (class: "gChart"). The subordinate divs (subordinate to ".dataColumns") do not need any classes of their own.
+
+Within each column div, specify the following parameters:
+  
+* id: This is an arbitrary string used to distinguish one data column from another.
+* data-type: number, string, or calc.
+* data-label: The label that appears in the header for the column. 
+* data-key: This is the key used to retrieve the data. It has to match the JSON data exactly, and you need to know it in advance.
+  * Example: In sample-data.js, the identifier (or key) for the employee's name is "name". Note the lower case (case matters).
+* width: Specify the width of the table column in pixels. Note: width will not affect the display for other chart types (like pie, bar, etc.), so it only needs to be included in table charts.
+
 
