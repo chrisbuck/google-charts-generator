@@ -5,7 +5,7 @@
 
 The Google Charts Generator is a suite of javascript files and stylesheets allowing a user to draw Google Charts using only HTML.
 
-> Example:  
+> Example 1:  
 
     <div id="tableChart" class="gChart mainTable chartVisible" data-charttype="table">
     <a class="endpoint" href="sample-data.js"></a>
@@ -44,3 +44,18 @@ And in the footer (or below the html defining how to draw the charts), reference
 
 1. ChartConstructor (JS)
 2. Chart Generator (JS)
+
+## Constructing the Main Table
+*See Example 1, above*
+
+### Steps:
+1. Create a <div> element with an arbitrary id.
+2. Assign the div the following classes: "gChart mainTable chartVisible".
+3. Include a <div> inside the mainTable with class of "dataColumns."
+4. For each column you want in your table, add a div with the following attributes:
+    * id,
+    * data-type: (number, string, or calc),
+    * data-label,
+    * data-key,
+    * width
+
