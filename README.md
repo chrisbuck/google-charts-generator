@@ -7,7 +7,7 @@ The Google Charts Generator is a suite of javascript files and stylesheets allow
 
 > Example:  
 
-    <div id="gChart" class="gChart" data-charttype="table">
+    <div id="tableChart" class="gChart mainTable chartVisible" data-charttype="table">
     <a class="endpoint" href="sample-data.js"></a>
       <div class="dataColumns">
         <div id="Index" data-type="number" data-label="Index" data-key="index" width="45px"></div>
@@ -15,6 +15,9 @@ The Google Charts Generator is a suite of javascript files and stylesheets allow
         <div id="Company" data-type="string" data-label="Company" data-key="company" width="110px"></div>
         <div id="Email" data-type="string" data-label="Email" data-key="email" width="220px"></div>
         <div id="DateRegistered" data-type="date" data-label="Date Registered" data-key="registered" width="110px"></div>
+        <div id="Person Link" data-type="calc" data-calcdispose="preserve" data-calctype="string" data-label="Person Link" width="110px">
+            <a class="calcLink" href="{Index}">{Name}</a>
+        </div>
       </div>
     </div>
 ...Will display a Table Chart.
