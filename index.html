@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="chartGenerator.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="google-loader.js"></script>
+    <script src="sample-data.js"></script>
+  </head>
+
+<body>
+    <div class="container">
+        <!-- Start copied code -->
+        <div id="chart_div_Carlos"></div>
+        <div id="chart_div_Josh"></div>
+        <!-- end copied code -->
+      <!-- put the url to your API data source here (in place of sample-data.js) -->
+            <a class="endpoint" href="sample-data.js"></a>
+      <div class="row">
+        <div class="col">
+          <div id="dashboard" class="gDashboard" data-charts="tableChart, tableChart2">
+              <div id="control_div"></div>
+            <div class="dashControls">
+              <div id="filterCompany" data-label="Company" data-type="string" data-controltype="category"></div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col">
+          <div id="tableChart" class="gChart mainTable chartVisible" data-charttype="table" data-title="Main Table">
+            <!-- Specify data columns with "dataColumns" class -->
+            <div class="dataColumns">
+              <div id="Index" data-type="number" data-label="Index" data-key="index" width="45px"></div>
+              <div id="Name" data-type="string" data-label="Name" data-key="name" width="110px"></div>
+              <div id="About" data-type="string" data-label="About" data-key="about" width="200px" class="popCell"></div>
+              <div id="Company" data-type="string" data-label="Company" data-key="company" width="110px"></div>
+              <div id="Email" data-type="string" data-label="Email" data-key="email" width="220px" visibility="hidden"></div>
+              <div id="DateRegistered" data-type="date" data-label="Date Registered" data-key="registered" width="110px"></div>
+              <div id="Person Link" data-type="calc" data-calcdispose="preserve" data-calctype="string" data-label="Person Link" width="110px">
+                <a class="calcLink" href="{Index}">{Name}</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div id="tableChart2" class="gChart chartVisible" data-charttype="pie" data-title="People with person links">
+            <!-- Specify data columns with "dataColumns" class -->
+            <div class="dataColumns">
+                <div id="Name" data-type="string" data-label="Name" data-key="name" width="110px"></div>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        
+      
+    </div>
+  </body>
+  
+  <footer>
+    <script src="chartConstructor.js"></script>
+    <script src="chartGenerator.js"></script>
+  </footer>
+
+</html>
