@@ -49,9 +49,9 @@ And in the footer (or below the html defining how to draw the charts), reference
 *See Example 1, above*
 
 ### Steps:
-1. Create a <div> element with an arbitrary id.
+1. Create a div element with an arbitrary id.
 2. Assign the div the following classes: "gChart mainTable chartVisible".
-3. Include a <div> inside the mainTable with class of "dataColumns."
+3. Include a div inside the mainTable with class of "dataColumns."
 4. For each column you want in your table, add a div with the following attributes:
     * id,
     * data-type: (number, string, or calc),
